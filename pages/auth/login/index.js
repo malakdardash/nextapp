@@ -21,6 +21,9 @@ export default function Login (){
     if (email.trim() === '' || password.trim() === '') {
       alert('Please enter both email and password.');
     }else{
+
+        
+        
         router.push('/Dashboard/index1');
     } 
 };
