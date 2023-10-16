@@ -2,7 +2,7 @@
 export default function Dashboard (){
     return(
         <div>
-          
+              
     <div className="Row pt-2 d-flex pb-3 ">  
       <div className="col-2 justify-content-center d-flex">
         <div className="pe-2">
