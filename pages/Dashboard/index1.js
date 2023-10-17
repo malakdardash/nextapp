@@ -25,6 +25,7 @@ export default function Dashboard (){
            <div><input className="border-0" type="text" placeholder="Search Project" name="search"></input></div>
           </div>
         </div>
+        
         <div className="col justify-content-end text-end align-self-end d-flex ps-5">
           <div>
           <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
