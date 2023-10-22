@@ -1,7 +1,7 @@
 
-export default function Login (){
-   
+export default function Dashboard (){
     return(
        <div></div>
+
     )
 }
