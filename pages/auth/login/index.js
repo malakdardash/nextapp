@@ -1,9 +1,39 @@
-import MyComponent from "@/shared";
+import LoginForm from "@/features/login/login-form";
+import { useState } from "react";
+import { useRouter } from "next/router";
+import MButton from "@/shared/components/m-button";
+import MCheckBoxInput from "@/shared/components/inputs/m-checkbox-input";
 export default function Login() {
+  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("");
+  const router = useRouter();
+
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value);
+    console.log(e.target.value);
+  };
+  const handlePasswordChange = (e) => {
+    setPassword(e.target.value);
+  };
+  const handleButtonClick = (e) => {
+    e.preventDefault();
+
+    if (email.trim() === "" || password.trim() === "") {
+      alert("Please enter both email and password.");
+      return;
+    }
+    const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
+
+    if (!emailRegex.test(email)) {
+      alert("Please enter a valid email address.");
+      return;
+    }
+    router.push("/dashboard");
+  };
   return (
     <div className="container body pt-5 vh-100 d-flex align-items-center justify-content-center mw-100">
       <div className="pt-5 pb-5">
-        <div className="text-center pb-2 pt-5 ">
+        <div className="text-center pb-2 pt-5">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="60"
@@ -19,19 +49,21 @@ export default function Login() {
             />
           </svg>
         </div>
-        <h5 className="mb-3 text-center text-white">MEMBER LOGIN</h5>
-        <div className="form-group mb-2">
-          <MyComponent />
+        <h5 className="mb-2 text-center text-white">MEMBER LOGIN</h5>
+        <div className="form-group mb-2 text-center">
+          <LoginForm
+            onEmailChange={handleEmailChange}
+            onPasswordChange={handlePasswordChange}
+            email={email}
+            password={password}
+            onClickbutton={handleButtonClick}
+          />
         </div>
-        <div className="form-group d-flex  text-white">
-          <div className="align-items-start pe-5">
-            <input type="checkbox" className="form-check-input"></input>
-            <label htmlFor="check" className="form-check-label">
-              Remember me
-            </label>
-          </div>
-          <div className="ps-1">
-            <a href="#" className="text-white">
+
+        <div className="form-group d-flex text-white">
+          <MCheckBoxInput options={[{ label: "Remember me" }]} />
+          <div>
+            <a href="#" className="text-white ps-5">
               Forget Password?
             </a>
           </div>
@@ -42,7 +74,10 @@ export default function Login() {
           </a>
         </div>
         <div className="form-group mb-2  text-center pb-5">
-          <button type="submit">Create account</button>
+          <MButton
+            label="create account"
+            classes="bg-light border border-white border-1  rounded-pill"
+          />
         </div>
       </div>
     </div>
