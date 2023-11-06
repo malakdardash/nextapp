@@ -1,0 +1,14 @@
+.style-input {
+    background-color:rgba(255,255,255, 0.5) ;
+    ::placeholder {
+        color: red;
+        text-align: center;
+      }
+}
+.style-button{
+    background-color:rgba(52, 52, 52, 0.91) ;
+    transition: background-color 0.3s;
+}
+.style-button:hover {
+    background-color: rgba(98, 98, 98, 0.91);
+}

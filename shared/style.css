@@ -1,0 +1,14 @@
+.MuiOutlinedInput-notchedOutline {
+    border: none !important;
+    width: "100%",
+}
+.body{
+  background-image: linear-gradient(to bottom right, rgb(255, 200, 0),rgb(255, 68, 0));
+  color: rgba(52, 52, 52, 0.91);
+}
+a{
+  font-size: 13px;
+}
+.MuiFormControlLabel-label{
+  font-size: 13px;
+}

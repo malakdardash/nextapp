@@ -1,0 +1,27 @@
+.color-Purple{
+    color: blueviolet;
+}
+.HomeIcon{
+    background-color: blueviolet;
+}
+.dashboardIcon{
+    background-image: linear-gradient(to right, rgb(205, 43, 226), blueviolet); 
+}
+a{
+    text-decoration: none;
+}
+.MuiOutlinedInput-notchedOutline {
+    border: none !important;  
+}
+.body1{
+    background-color:rgba(195, 132, 253, 0.164);
+}
+.card1{
+    background-image: linear-gradient(to right, rgb(251, 214, 103), rgb(255, 91, 154));
+}
+.card2{
+    background-image: linear-gradient(to right, rgb(103, 211, 251), rgb(0, 170, 255));
+}
+.card3{
+    background-image: linear-gradient(to right, rgb(123, 255, 202), rgb(1, 255, 153));
+}
